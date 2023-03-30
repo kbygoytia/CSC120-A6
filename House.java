@@ -2,16 +2,31 @@ import java.util.ArrayList;
 
 /* This is a stub for the House class */
 public class House extends Building {
-
   private ArrayList<String> residents;
   private boolean hasDiningRoom;
+
+  /**
+   * 
+   * @param name
+   * @param address
+   * @param nFloors
+   * @param hasDiningRoom
+   */
 
   public House(String name, String address, int nFloors, boolean hasDiningRoom) {
     super(name, address, nFloors);
     this.residents = new ArrayList<String>();
     this.hasDiningRoom = hasDiningRoom;
   }
-
+  /**
+     * Creates a House object
+     * @param name
+     * @param address
+     * @param nFloors
+     * @param hasDiningRoom
+     * @return a new house object with a name, address, floor amount, and hasDiningRoom.
+     * in the format [name] is a [nFloors]-building located at [address].
+     */
   /** Accessor for hasDiningRoom */
   public boolean hasDiningRoom() {
     return this.hasDiningRoom;
@@ -36,6 +51,12 @@ public class House extends Building {
       System.out.println(e);
     }
   }
+/**
+ * moves in a string name into the house if they do not already live there
+ * @param name
+ * 
+ */
+
   public String moveOut(String name){
     try{
       if (!this.residents.contains(name)){
@@ -51,6 +72,11 @@ public class House extends Building {
     }
     return name;
   }
+  /**
+   * moves out a resident of the house
+   * @param person
+   * @return name
+   */
 
 
   public boolean isResident(String person){
@@ -61,6 +87,11 @@ public class House extends Building {
       return false;
     }
   }
+  /**
+   * checks if a person is a resident of the house
+   * @param person
+   * @return boolean
+   */
   
 
   public String toString() {
@@ -75,6 +106,11 @@ public class House extends Building {
     description += " an active dining room.";
     return description;
   }
+  /**
+   * creates a description of the house
+   * @param args
+   * @return description
+   */
 
   public static void main(String[] args) {
     // House morrow = new House("Morrow", "The Quad", 4, false);

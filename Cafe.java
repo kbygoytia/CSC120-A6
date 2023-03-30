@@ -12,6 +12,16 @@ public class Cafe extends Building {
 
     // The number of cups remaining in inventory
     private int nCups; 
+    /**
+     * 
+     * @param name
+     * @param address
+     * @param nFloors
+     * @param nCoffeeOunces
+     * @param nSugarPackets
+     * @param nCreams
+     * @param nCups
+     */
 
     public Cafe(String name, String address, int nFloors, int nCoffeeOunces, int nSugarPackets, int nCreams, int nCups) {
         super(name, address, nFloors);
@@ -21,19 +31,32 @@ public class Cafe extends Building {
         this.nCups = nCups;
         System.out.println("You have built a cafe: ☕");
     }
+    /**
+     * Creates a Cafe object
+     *@param name
+     * @param address
+     * @param nFloors
+     * @param nCoffeeOunces
+     * @param nSugarPackets
+     * @param nCreams
+     * @param nCups
+     * @return a new cafe object with a name, address,  floor amount, nCoffeeOunces, nSugarPackets, nCreams, and nCups.
+     * in the format [name] is a [nFloors]-building located at [address].
+     */
 
+    /*Accessor for nCoffeeOunces */
     public int nCoffeeOunces(){
         return this.nCoffeeOunces;
     }
-
+    /*Accessor for nSugarPackets */
     public int nSugarPackets(){
         return this.nSugarPackets;
     }
-
+    /*Accessor for nCreams */
     public int nCreams(){
         return this.nCreams;
     }
-
+    /*Accessor for nCups */
     public int nCups(){
         return this.nCups;
     }
@@ -52,6 +75,13 @@ public class Cafe extends Building {
             this.restock(size, nSugarPackets, nCreams, 1);
             }
     }
+    /**
+     * 
+     * @param nCoffeeOunces
+     * @param nSugarPackets
+     * @param nCreams
+     * @param nCups
+     */
 
     private void restock(int nCoffeeOunces, int nSugarPackets, int nCreams, int nCups){
         if(this.nCoffeeOunces < nCoffeeOunces){
@@ -67,6 +97,10 @@ public class Cafe extends Building {
             this.nCups = nCups+5;
         }
     } 
+    /**
+     * restocks nCoffeeOunces, nSugarPackets, nCreams, and nCups so that a coffee can be made
+     * @param args
+     */
 
 
     

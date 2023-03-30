@@ -3,15 +3,35 @@ import java.util.Hashtable;
 public class Library extends Building{
 
     private Hashtable<String, Boolean> collection;
+
+    /**
+     * 
+     * @param name
+     * @param address
+     * @param nFloors
+     */
     public Library(String name, String address, int nFloors) {
       super(name, address, nFloors);
       this.collection = new Hashtable<String, Boolean>();
     }
+    /**
+     * Creates a Library object
+     * @param name
+     * @param address
+     * @param nFloors
+     * @return a new library object with a name, address, and floor amount 
+     * in the format [name] is a [nFloors]-building located at [address].
+     */
 
+    /** Accessor for collection */
     public Hashtable<String, Boolean> getCollection() {
       return this.collection;
     }
-
+    /**
+     * Looks for a title inside of the library's collection
+     * @param title inside of collection
+     * @return this.collection
+     */
 
     public void addTitle(String title){
       try{
@@ -27,6 +47,11 @@ public class Library extends Building{
            
         } 
     }
+    /**
+     * adds the String title specified in main into the collection
+     * @param title
+     * 
+     */
 
     
 
@@ -45,6 +70,11 @@ public class Library extends Building{
         } 
         return(title); 
   }
+  /**
+   * removes a string title from the collection
+   * @param title
+   * @return title
+   */
 
   
 
@@ -66,6 +96,11 @@ public class Library extends Building{
         } 
     }
 
+    /**
+     * checks out a key string title by turning it's value false
+     * @param title
+     */
+
 
     public void returnBook(String title){
       try{
@@ -84,6 +119,11 @@ public class Library extends Building{
            
         } 
     }
+    /**
+     * returns key string title by chaning value to true
+     * @param title
+     * 
+     */
 
   
 
@@ -96,6 +136,11 @@ public class Library extends Building{
         return false;
       }
     } 
+    /**
+     * checks if collection conatins a string title
+     * @param title
+     * @return boolean
+     */
 
     
 
@@ -109,17 +154,31 @@ public class Library extends Building{
         return false;
         }
       }
+      /**
+       * checks if a key string title is available in collection by looking at its value boolean to see if it is true
+       * @param title
+       * @return boolean
+       */
 
       public String toString() {
         String description = super.toString();
         description += " There are currently " + this.collection.size() + " books in this collection.";
         return description;
       }
+      /**
+       * prints amount of titles in collection
+       * @param args
+       * @return description
+       */
   
     // prints out the entire collection in an easy-to-read way (including checkout status)
     public void printCollection(){
       System.out.println(this.collection.toString());
     }
+    /**
+     * prints the titles and their boolean in collection
+     * @param args
+     */
     
 
     public static void main(String[] args) {
